@@ -1,0 +1,703 @@
+/* Base Styles */
+.app {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* Mode Toggle */
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid #eee;
+}
+
+.mode-toggle {
+  display: flex;
+  gap: 10px;
+}
+
+.mode-toggle button {
+  padding: 0.8rem 1.5rem;
+  border: 2px solid #0070f3;
+  background: white;
+  color: #0070f3;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 600;
+}
+
+.mode-toggle button.active {
+  background: #0070f3;
+  color: white;
+}
+
+/* Feature Navigation */
+.feature-nav, .employer-nav {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.feature-nav button, .employer-nav button {
+  padding: 0.8rem 1.5rem;
+  border: none;
+  background: #f5f5f5;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+}
+
+.feature-nav button.active, .employer-nav button.active {
+  background: #0070f3;
+  color: white;
+}
+
+/* Job Seeker Specific Styles */
+.job-search-section {
+  margin-top: 1rem;
+}
+
+.search-header {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 2rem;
+}
+
+.search-input {
+  flex: 1;
+  padding: 0.8rem;
+  border: 2px solid #e1e5e9;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.refresh-btn {
+  padding: 0.8rem 1.5rem;
+  background: #28a745;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.jobs-grid {
+  display: grid;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.job-card {
+  background: white;
+  border: 1px solid #e1e5e9;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease;
+}
+
+.job-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.job-header h3 {
+  margin: 0 0 0.5rem 0;
+  color: #2c3e50;
+  cursor: pointer;
+}
+
+.job-meta {
+  display: flex;
+  gap: 1rem;
+  font-size: 0.9rem;
+  color: #6c757d;
+}
+
+.company {
+  font-weight: 600;
+  color: #0070f3;
+}
+
+.job-details {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid #e9ecef;
+}
+
+.job-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+
+.delete-btn { background: #dc3545; color: white; border: none; padding: 0.5rem 1rem; border-radius: 6px; cursor: pointer; }
+.analyze-btn { background: #17a2b8; color: white; border: none; padding: 0.5rem 1rem; border-radius: 6px; cursor: pointer; }
+.save-btn { background: #6c757d; color: white; border: none; padding: 0.5rem 1rem; border-radius: 6px; cursor: pointer; }
+.apply-btn { background: #28a745; color: white; border: none; padding: 0.5rem 1rem; border-radius: 6px; cursor: pointer; }
+
+.analysis-section {
+  margin-top: 1rem;
+  padding: 1rem;
+  background: #f8f9fa;
+  border-radius: 8px;
+}
+
+/* Feature Components */
+.career-simulator,
+.culture-matcher,
+.negotiation-coach {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.simulator-form,
+.preferences-form,
+.offer-input {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+.timeline-step {
+  background: white;
+  padding: 1rem;
+  border-radius: 8px;
+  border-left: 4px solid #0070f3;
+}
+
+.company-match {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  border: 1px solid #e1e5e9;
+}
+
+.coaching-results {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Employer Styles (from previous) */
+.employer-mode {
+  margin-top: 1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .app {
+    padding: 1rem;
+  }
+  
+  .app-header {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .feature-nav, .employer-nav {
+    flex-direction: column;
+  }
+  
+  .job-actions {
+    flex-direction: column;
+  }
+  
+  .search-header {
+    flex-direction: column;
+  }
+}
+/* Company Analytics Styles */
+.company-analytics {
+  padding: 1rem;
+}
+
+.analytics-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.time-range-selector {
+  padding: 0.5rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+}
+
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.metric-card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  border-left: 4px solid #0070f3;
+}
+
+.metric-value {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #0070f3;
+  margin: 0.5rem 0;
+}
+
+.metric-label {
+  font-weight: 600;
+  color: #555;
+  margin-bottom: 0.5rem;
+}
+
+.metric-sub {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.benchmarks-section,
+.suggestions-section {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  margin-bottom: 1.5rem;
+}
+
+.benchmark-comparison {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.benchmark-item {
+  text-align: center;
+  padding: 1rem;
+  background: #f8f9fa;
+  border-radius: 8px;
+}
+
+.benchmark-label {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.benchmark-value {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #28a745;
+}
+
+.suggestions-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.suggestion-card {
+  padding: 1rem;
+  background: #f8f9fa;
+  border-radius: 8px;
+  border-left: 4px solid #17a2b8;
+}
+
+.suggestion-card h4 {
+  margin: 0 0 0.5rem 0;
+  color: #17a2b8;
+}
+
+.impact {
+  margin-top: 0.5rem;
+  font-weight: 600;
+  color: #28a745;
+}
+
+.trend.improving {
+  color: #28a745;
+}
+
+.trend.declining {
+  color: #dc3545;
+}
+
+/* Skill Gap Analyzer */
+.skill-analyzer {
+  margin: 1rem 0;
+  padding: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background: #f9f9f9;
+}
+
+.skill-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0.5rem 0;
+  padding: 0.5rem;
+  background: white;
+  border-radius: 4px;
+}
+
+.analysis-results {
+  margin-top: 1rem;
+}
+
+.match-score {
+  padding: 1rem;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.high-match { background: #d4edda; color: #155724; }
+.medium-match { background: #fff3cd; color: #856404; }
+.low-match { background: #f8d7da; color: #721c24; }
+
+.skills-breakdown {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.strong-skills, .missing-skills {
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+.strong-skills { background: #e8f5e8; }
+.missing-skills { background: #fff0f0; }
+
+.learning-resources {
+  margin-top: 0.5rem;
+}
+
+.learning-resources a {
+  display: block;
+  font-size: 0.8rem;
+  color: #0070f3;
+  text-decoration: none;
+  margin: 0.2rem 0;
+}
+
+.learning-resources a:hover {
+  text-decoration: underline;
+}
+
+/* Career Simulator */
+.career-simulator {
+  max-width: 800px;
+}
+
+.simulator-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+.timeline-step {
+  background: white;
+  padding: 1rem;
+  border-radius: 8px;
+  border-left: 4px solid #0070f3;
+}
+
+.step-year {
+  font-weight: bold;
+  color: #0070f3;
+}
+
+.step-role {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 0.5rem 0;
+}
+
+.step-salary {
+  font-weight: bold;
+  color: #28a745;
+}
+
+.alternative-path {
+  background: white;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  border-left: 4px solid #17a2b8;
+}
+
+/* Culture Matcher */
+.culture-matcher {
+  max-width: 800px;
+}
+
+.preferences-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.preference-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.preference-field label {
+  font-weight: 600;
+}
+
+.preference-field select {
+  padding: 0.5rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+}
+
+.company-match {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  border: 1px solid #e1e5e9;
+}
+
+.company-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.match-score {
+  background: #0070f3;
+  color: white;
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-weight: bold;
+}
+
+.company-details {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.insight {
+  padding: 0.5rem;
+  background: #f8f9fa;
+  border-radius: 4px;
+  margin: 0.2rem 0;
+}
+
+/* Negotiation Coach */
+.negotiation-coach {
+  max-width: 800px;
+}
+
+.offer-input {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.coaching-results {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.target-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.target-item {
+  background: white;
+  padding: 1rem;
+  border-radius: 8px;
+  text-align: center;
+  border: 1px solid #e1e5e9;
+}
+
+.target-label {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.target-value {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #28a745;
+}
+
+.scenario {
+  background: white;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  border-left: 4px solid #ffc107;
+}
+
+.scenario-prompt, .scenario-response {
+  margin: 0.5rem 0;
+}
+
+/* Company Analytics (from previous) */
+.company-analytics {
+  padding: 1rem;
+}
+
+.analytics-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.time-range-selector {
+  padding: 0.5rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+}
+
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.metric-card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  border-left: 4px solid #0070f3;
+}
+
+.metric-value {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #0070f3;
+  margin: 0.5rem 0;
+}
+
+.metric-label {
+  font-weight: 600;
+  color: #555;
+  margin-bottom: 0.5rem;
+}
+
+.metric-sub {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.benchmarks-section,
+.suggestions-section {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  margin-bottom: 1.5rem;
+}
+
+.benchmark-comparison {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.benchmark-item {
+  text-align: center;
+  padding: 1rem;
+  background: #f8f9fa;
+  border-radius: 8px;
+}
+
+.benchmark-label {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.benchmark-value {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #28a745;
+}
+
+.suggestions-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.suggestion-card {
+  padding: 1rem;
+  background: #f8f9fa;
+  border-radius: 8px;
+  border-left: 4px solid #17a2b8;
+}
+
+.suggestion-card h4 {
+  margin: 0 0 0.5rem 0;
+  color: #17a2b8;
+}
+
+.impact {
+  margin-top: 0.5rem;
+  font-weight: 600;
+  color: #28a745;
+}
+
+.trend.improving {
+  color: #28a745;
+}
+
+.trend.declining {
+  color: #dc3545;
+}
